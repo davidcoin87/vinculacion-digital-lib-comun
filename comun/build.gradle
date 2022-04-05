@@ -1,0 +1,43 @@
+allprojects {
+
+	repositories {
+		mavenCentral()		
+	}
+	
+
+	project.ext.apachecommons = [
+									"commons-io:commons-io:2.11.0",
+									"org.apache.commons:commons-lang3:3.12.0"
+								]
+	
+	project.ext.springbootweb = ["org.springframework.boot:spring-boot-starter-web:${springBootVersion}"]
+	project.ext.springdevtools = ["org.springframework.boot:spring-boot-devtools:${springBootVersion}"]
+	
+	project.ext.springbootjdbc = ["org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"]
+	
+	project.ext.springtxt = [
+							  	"org.springframework:spring-tx:${springVersion}",
+							  	"org.springframework:spring-context:${springVersion}"
+							]
+	
+	project.ext.springbootjasypt = ['com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.1']
+	project.ext.springboottest = ["org.springframework.boot:spring-boot-starter-test:${springBootVersion}"]
+	// Se excluye JUnit 4
+	configurations {
+		runtime.exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+	project.ext.jasper = ["commons-codec:commons-codec:1.15",
+						  "commons-collections:commons-collections:3.2.2",
+						  "commons-digester:commons-digester:2.1",
+						  "joda-time:joda-time:2.10.14",
+						  "com.lowagie:itext:2.1.7",
+						  "net.sf.jasperreports:jasperreports:6.19.1"]
+
+
+	project.ext.actuator = ["org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}",
+						  "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}"]
+	project.ext.mail = ["org.springframework.boot:spring-boot-starter-mail:${springBootVersion}"]
+	project.ext.aspectj = ["org.springframework:spring-aspects:${springVersion}"]
+
+}
